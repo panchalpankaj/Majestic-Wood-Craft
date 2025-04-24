@@ -15,7 +15,7 @@ const Product = () => {
       "./white_kitchen.png", "./kitchen2.png", "./kitchen3.png",
       "./sofa1.png", "./sofa2.png", "./sofa3.png", "./sofa4.png",
       "./wardrow1.png", "./wardrow2.png", "./wardrow3.png",
-      "./holl.png"
+      "./holl.png",
     ],
     Beds: ["./badset1.png", "./badset2.png", "./badset3.png"],
     Chairs: ["./chair.png", "./chair2.png", "./chair3.png"],

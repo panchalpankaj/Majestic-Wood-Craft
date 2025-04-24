@@ -10,7 +10,7 @@ import Maps from "./Maps";
 import WhatsAppButton from "./Whatsapp";
 import { styled } from "@mui/system";
 
-// Styled Components for CSS-in-JS
+
 const ProjectContainer = styled(Container)({
   marginTop: "50px",
   marginBottom: "80px",
@@ -84,6 +84,42 @@ const projectData = {
     ],
     description: "This is a detailed page for the Nikol Project.",
   },
+  2: {
+    title: "PrahladNagar Project",
+    images: [
+      "../Prahladnagar/cabat_image.jpg",
+      "../Prahladnagar/full_white_cabat.jpg",
+      "../Prahladnagar/white_cabat.jpg",
+    ],
+    description: "This is a detailed page for the PrahladNagar Project.",
+  },
+  3: {
+    title: "Silaj Project",
+    images: [
+      "../Silaj/bed_and_hall.jpg",
+      "../Silaj/bed.jpg",
+      "../Silaj/bed2.jpg",
+      "../Silaj/bed3.jpg",
+      "../Silaj/bed4.jpg",
+      "../Silaj/cabat.jpg",
+      "../Silaj/cabat2.jpg",
+      "../Silaj/cabat3.jpg",
+      "../Silaj/dining.jpg",
+      "../Silaj/dining2.jpg",
+      "../Silaj/dressing.jpg",
+      "../Silaj/furniture.jpg",
+      "../Silaj/holl.jpg",
+      "../Silaj/kitchen.jpg",
+      "../Silaj/kitchen2.jpg",
+      "../Silaj/sidebox_whit_bed.jpg",
+      "../Silaj/sidebox.jpg",
+      "../Silaj/tv_cabinate.jpg",
+      "../Silaj/tv_unit.jpg",
+      "../Silaj/white_cabat.jpg",
+     
+    ],
+    description: "This is a detailed page for the Silaj Project.",
+  },
 };
 
 const ProjectDetail = () => {
@@ -100,7 +136,6 @@ const ProjectDetail = () => {
 
   const sliderRef = React.useRef(null);
 
-  // Carousel Settings
   const settings = {
     dots: true,
     infinite: true,
@@ -109,7 +144,7 @@ const ProjectDetail = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
-    arrows: false, // Custom arrows will be used
+    arrows: false,
     responsive: [
       {
         breakpoint: 768,
@@ -131,40 +166,41 @@ const ProjectDetail = () => {
 
   return (
     <>
-    <ProjectContainer>
-      <Title>{project.title}</Title>
-      <Description>{project.description}</Description>
+      <ProjectContainer>
+        <Title>{project.title}</Title>
+        <Description>{project.description}</Description>
 
-      {/* Image Slider with Custom Arrows */}
-      <SliderContainer>
-        <ArrowButton
-          sx={{ left: 10 }}
-          onClick={() => sliderRef.current?.slickPrev()}
-        >
-          <ArrowBackIos />
-        </ArrowButton>
+        <SliderContainer>
+          <ArrowButton
+            sx={{ left: 10 }}
+            onClick={() => sliderRef.current?.slickPrev()}
+          >
+            <ArrowBackIos />
+          </ArrowButton>
 
-        <Slider ref={sliderRef} {...settings}>
-          {project.images.map((img, index) => (
-            <Box key={index} sx={{ display: "flex", justifyContent: "center" }}>
-              <Image src={img} alt={`Project Image ${index}`} />
-            </Box>
-          ))}
-        </Slider>
+          <Slider ref={sliderRef} {...settings}>
+            {project.images.map((img, index) => (
+              <Box
+                key={index}
+                sx={{ display: "flex", justifyContent: "center" }}
+              >
+                <Image src={img} alt={`Project Image ${index}`} />
+              </Box>
+            ))}
+          </Slider>
 
-        <ArrowButton
-          sx={{ right: 10 }}
-          onClick={() => sliderRef.current?.slickNext()}
-        >
-          <ArrowForwardIos />
-        </ArrowButton>
-      </SliderContainer>
-
-    </ProjectContainer>
+          <ArrowButton
+            sx={{ right: 10 }}
+            onClick={() => sliderRef.current?.slickNext()}
+          >
+            <ArrowForwardIos />
+          </ArrowButton>
+        </SliderContainer>
+      </ProjectContainer>
       <WhatsAppButton />
       <Maps />
       <Footer />
-      </>
+    </>
   );
 };
 

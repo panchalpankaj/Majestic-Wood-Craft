@@ -1,13 +1,21 @@
 import React from "react";
-import { Card, CardActionArea, CardMedia, CardContent, Typography, Box, useMediaQuery } from "@mui/material";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom";
+import {
+  Card,
+  CardActionArea,
+  CardContent,
+  CardMedia,
+  Typography,
+  Box,
+  useMediaQuery,
+} from "@mui/material";
 
 const ProjectCard = ({ project }) => {
   const isSmallScreen = useMediaQuery("(max-width:600px)");
-  const navigate = useNavigate(); // Hook for navigation
+  const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`/projects/${project.id}`); // Redirect on click
+    navigate(`/projects/${project.id}`);
   };
 
   return (
@@ -15,16 +23,16 @@ const ProjectCard = ({ project }) => {
       sx={{
         borderRadius: 4,
         boxShadow: 6,
-        height: 350,
         display: "flex",
         flexDirection: "column",
         transition: "0.3s",
         overflow: "hidden",
+        height: 400, // total height for card
         "&:hover": isSmallScreen ? {} : { transform: "scale(1.05)", boxShadow: 10 },
       }}
     >
-      <CardActionArea onClick={handleClick} sx={{ flexGrow: 1 }}> {/* Click to navigate */}
-        <Box sx={{ position: "relative", height: "65%", overflow: "hidden" }}>
+      <CardActionArea onClick={handleClick} sx={{ flexGrow: 1 }}>
+        <Box sx={{ position: "relative", height: 220, overflow: "hidden" }}>
           <CardMedia
             component="img"
             image={project.image}
@@ -32,7 +40,7 @@ const ProjectCard = ({ project }) => {
             sx={{
               width: "100%",
               height: "100%",
-              objectFit: "cover",
+              objectFit: "cover", // this crops/stretch images uniformly
             }}
           />
           <Box
@@ -50,7 +58,11 @@ const ProjectCard = ({ project }) => {
           <Typography variant="h6" fontWeight="bold" sx={{ fontSize: { xs: "1rem", md: "1.3rem" } }}>
             {project.title}
           </Typography>
-          <Typography variant="body2" color="text.secondary" sx={{ fontSize: { xs: "0.9rem", md: "1rem" } }}>
+          <Typography
+            variant="body2"
+            color="text.secondary"
+            sx={{ fontSize: { xs: "0.9rem", md: "1rem" } }}
+          >
             {project.description}
           </Typography>
         </CardContent>

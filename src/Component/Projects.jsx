@@ -8,6 +8,8 @@ import ProjectCard from "./ProjectCard";
 
 const projects = [
   { id: 1, title: "Nikol Project", image: "./NikoleProjectimg/hall1.jpg", description: "Click The Card For More Details" },
+  { id: 2, title: "PrahladNagar  Project", image: "./Prahladnagar/white_cabat.jpg", description: "Click The Card For More Details" },
+  { id: 3, title: "Silaj  Project", image: "./Silaj/tv_unit.jpg", description: "Click The Card For More Details" },
 ];
 
 const Projects = () => {
@@ -15,11 +17,11 @@ const Projects = () => {
     <>
       <Nav />
       <WhatsAppButton />
-      <Container sx={{ mt: 10, mb: 5, py: 3 }}> {/* Top & Bottom Padding */}
+      <Container sx={{ mt: 10, mb: 5, py: 3 }}> 
         <Grid container spacing={3} justifyContent="center">
           {projects.map((project) => (
             <Grid item xs={12} sm={6} md={4} lg={3} key={project.id}>
-              {/* Large screen par ek row me 4 cards, medium par 3, small par 2, mobile par 1 */}
+              
               <ProjectCard project={project} />
             </Grid>
           ))}

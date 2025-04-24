@@ -54,7 +54,7 @@ const Footer = () => {
 
           {/* Location Link */}
           <a
-            href="https://goo.gl/maps/XyzExample"
+            href="https://maps.app.goo.gl/ksbhfXcifFPbbUvu8"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-3 text-lg no-underline hover:no-underline"
